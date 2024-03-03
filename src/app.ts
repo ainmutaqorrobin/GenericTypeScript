@@ -1,18 +1,15 @@
-// const names: Array<string | number> = [`Robin`, `Ain`];
+interface Lengthy {
+  length: number;
+}
+function countDescription<T extends Lengthy>(element: T): [T, string] {
+  let descrition = `got no value`;
+  if (element.length === 1) {
+    descrition = `got 1 element`;
+  } else if (element.length > 1) {
+    descrition = `got  ` + element.length + ` element`;
+  }
 
-// const promise: Promise<any> = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve(10);
-//   }, 2000);
-// });
-// promise.then((data) => {
-//   data.split(` `);
-// });
-let newobject: object;
-
-function merge<T, U>(objA: T, objB: U) {
-  return Object.assign(objA, objB);
+  return [element, descrition];
 }
 
-newobject = merge({ name: `robin` }, { age: 24 });
-console.log();
+console.log(countDescription([`Coooking`, `STLOO WOO`]));

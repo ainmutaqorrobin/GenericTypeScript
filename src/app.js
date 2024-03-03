@@ -1,13 +1,11 @@
-var names = ["Robin", "Ain"];
-// const promise: Promise<any> = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve(10);
-//   }, 2000);
-// });
-// promise.then((data) => {
-//   data.split(` `);
-// });
-function merge(objA, objB) {
-    return Object.assign(objA, objB);
+function countDescription(element) {
+    var descrition = "got no value";
+    if (element.length === 1) {
+        descrition = "got 1 element";
+    }
+    else if (element.length > 1) {
+        descrition = "got  " + element.length + " element";
+    }
+    return [element, descrition];
 }
-console.log(merge({ name: "robin" }, { age: 24 }));
+console.log(countDescription(["Coooking", "STLOO WOO"]));
